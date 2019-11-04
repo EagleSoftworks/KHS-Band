@@ -4,7 +4,7 @@
 	<title>KHS Band</title>
 	<meta name="author" content="Kate Keefe">
 	<meta name="description" content="KHS Band Page">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+	<link rel="icon" href="media/note-icon.png">
 
 	<link href="styles.css" rel="stylesheet"/>
 </head>
@@ -16,7 +16,43 @@
 
 	<div id="pageBackground">
 		<div id="page">
-			<h2>Empty</h2>
+			<div id="carousel">
+				<img class="shadow carouselImg" src="./media/note-icon.png" alt="Notes icon">
+				<img class="shadow carouselImg invisible" src="./media/notes-pattern.png" alt="notes pattern">
+				<img class="shadow carouselImg invisible" src="./media/GitHub-Mark-64px.png" alt="github logo">
+			</div>
+
+			<hr>
+			<div class="row">
+				<a>
+					<div class="slide left">
+						<h2>Upcoming Performances</h2>
+					</div></a>
+				<a>
+					<div class="slide right">
+						<h2>Past Performances</h2>
+					</div></a>
+				<a>
+					<div class="slide left">
+						<h2>Syllabus</h2>
+					</div></a>
+				<a>
+					<div class="slide right">
+						<h2>KHS Band Day</h2>
+					</div></a>
+				<a href="./library.html">
+					<div class="slide left">
+						<h2>Music Library</h2>
+					</div></a>
+				<a>
+					<div class="slide right">
+						<h2>Tri-M Music Honors Society</h2>
+					</div></a>	
+				<a>
+					<div class="slide left">
+						<h2>Uniform Care</h2>
+					</div></a>		
+			</div>
 
 		</div>
 	</div>
@@ -25,6 +61,6 @@
 		<span id="footerText">Website made by Kate Keefe</span>
 		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
 	</div>
-
+	<script src="carousel.js"></script>
 </body>
 </html>

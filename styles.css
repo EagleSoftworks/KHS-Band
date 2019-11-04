@@ -28,7 +28,7 @@ body {
 /********** Page **********/
 #pageBackground {
 	background-color: var(--accent);
-	background-image: url("./media/notes4.png");
+	background-image: url("./media/notes-pattern.png");
 	background-repeat: repeat;
 }
 #page {
@@ -36,7 +36,8 @@ body {
 	width: 75%;
 	max-width: 725px;
 	min-width: 425px;
-	min-height: 300px;
+	min-height: 400px;
+	overflow-y: auto;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 15px 25px;
@@ -128,7 +129,7 @@ tr:hover {
 /********** Base Components **********/
 h1, h2, h3, h4 {
 	margin: 5px 0;
-	color: var(--accent);
+	color: #000000; /* var(--accent); */
 }
 
 p {
@@ -163,7 +164,7 @@ li {
 
 hr {
 	margin: 20px 15px;
-	border-top: 2px dashed var(--accent);
+	border-top: 2px solid var(--accent);
 }
 
 button {
@@ -180,11 +181,11 @@ button:hover {
 	color: #ffffff;
 }
 
-img {
+/* img {
 	width: 80%;
 	margin: 5px 0 0 10%; /*5px on top, 10% on left*/
-	border-radius: 5px;
-}
+	/* border-radius: 5px; */
+/* } */ 
 
 a {
 	text-decoration: none;
@@ -235,4 +236,45 @@ a {
 input[type=text] {
 	width: 27%;
 	padding: 5px;
+}
+
+/********** For Transitions **********/
+.row {
+	width: 100%;
+}
+
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+
+.slide {
+	width: calc(60% - 5px);
+	margin: 10px 0;
+	padding: 5px;
+	border: 1px solid var(--accent);
+	border-radius: 5px;
+	transition-duration: 0.7s;
+}
+.slide:hover {
+	width: calc(100% - 10px);
+}
+
+#carousel {
+	width: 100%;
+	height: 100px;
+	border: 1px solid var(--accent);
+	overflow-y: hidden;
+}
+.invisible {
+	visibility: hidden;
+}
+.carouselImg {
+	width: 100px;
+	max-height: 100px;
+	/* margin-left: calc(50% - 50px); */
+	transition-duration: 1s;
+	position: absolute;
 }
