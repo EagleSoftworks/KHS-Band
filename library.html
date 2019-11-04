@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>KHS Band | Library</title>
+	<meta name="author" content="Kate Keefe">
+	<meta name="description" content="KHS Band Page">
+	<link rel="icon" href="media/GitHub-Mark-64px.png">
+
+	<link href="styles.css" rel="stylesheet"/>	
+</head>
+<body>
+	
+	<div id="header">
+		<a href="./index.html"><h1 id="title">Library</h1></a>
+	</div>
+
+	<div id="pageBackground">
+		<div id="page">
+			<div id="searchbar">
+                <input type="text" placeholder="Title" id="inputTitle">
+                <input type="text" placeholder="Composer" id="inputComposer">
+                <input type="text" Placeholder="Arranger" id="inputArranger">
+                <button OnClick="search()">Search</button>
+            </div>
+
+            <table id="musicTable">
+                <tr>
+                    <th>Title</th>
+                    <th>Composer</th>
+                    <th>Arranger</th>
+                </tr>
+            </table>
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<span id="footerText">Website made by Kate Keefe</span>
+		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
+    </div>
+    
+    <script src="data.js"></script>
+	<script src="library.js"></script>
+</body>
+</html>
