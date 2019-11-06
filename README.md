@@ -1,1 +1,1 @@
-# khs-band
+# KHS-Band
