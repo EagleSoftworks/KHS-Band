@@ -7,5 +7,9 @@ songs = [
         title: "the second song!",
         composer: "lastname",
         arranger: "n/a"
+    }, {
+        title: "another song unique keyword",
+        composer: "lost",
+        arranger: "this guy"
     }
 ]

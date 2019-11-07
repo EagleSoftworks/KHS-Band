@@ -8,13 +8,17 @@ const title = document.getElementById("inputTitle")
 const composer = document.getElementById("inputComposer")
 const arranger = document.getElementById("inputArranger")
 
-/******************** Fill Table Function ********************/
+/******************** Table Functions ********************/
+function addRow(dataIndex) {
+    let newRow = table.insertRow(table.rows.length)
+    newRow.insertCell(0).innerHTML = songs[dataIndex].title
+    newRow.insertCell(1).innerHTML = songs[dataIndex].composer
+    newRow.insertCell(2).innerHTML = songs[dataIndex].arranger
+}
+
 function fillTable() {
     for (let i = 0; i < songs.length; i++) {
-        let newRow = table.insertRow(i + 1)
-        newRow.insertCell(0).innerHTML = songs[i].title
-        newRow.insertCell(1).innerHTML = songs[i].composer
-        newRow.insertCell(2).innerHTML = songs[i].arranger
+        addRow(i)
     }
 }
 fillTable()
@@ -28,30 +32,18 @@ function eraseTable() {
 /******************** Search Function ********************/
 function search() {
     eraseTable()
-    fillTable()
 
-    if (title.value != "") {
-        for(let i = 0; i < table.rows.length - 1; i++) {
-            if(!(table.rows[i + 1].cells[0].innerHTML).includes(title.value)) {
-                table.rows[i+1].remove()
-            }
-        }
+    for (let i = 0; i < songs.length; i++) {
+        let match = false;
+        
+        if (title.value != "" && songs[i].title.includes(title.value)) 
+            match = true
+        if (title.value != "" && songs[i].composer.includes(title.value)) 
+            match = true
+        if (title.value != "" && songs[i].arranger.includes(title.value)) 
+            match = true
+
+        if (match)
+            addRow(i)
     }
-
-    if (composer.value != "") {
-        for(let i = 0; i < songs.length; i++) {
-            if(!(table.rows[i + 1].cells[1].innerHTML).includes(composer.value)) { 
-                table.rows[i+1].remove()
-            }
-        }
-    }
-
-    if (arranger.value != "") {
-        for(let i = 0; i < songs.length; i++) {
-            if(!(table.rows[i + 1].cells[2].innerHTML).includes(arranger.value)) { 
-                table.rows[i+1].remove()
-            }
-        }
-    }
-
 }
