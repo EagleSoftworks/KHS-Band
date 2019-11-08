@@ -239,14 +239,23 @@ a {
 /********** Library **********/
 
 #searchbar {
-	width: 100%;
-	border: 1px solid #000000;
-	padding: 5px;
+	width: (100% - 10px);
+	height: 40px;
+	/* border: 1px solid #000000; */
+}
+#searchbar button {
+	float: right;
+	width: 80px;
+	height: 100%;
 }
 
-input[type=text] {
-	width: 27%;
+#inputSearch {
+	width: calc(100% - 110px);
+	height: calc(100% - 14px);
 	padding: 5px;
+	font-size: 16px;
+	outline: none
+	/* margin-top: 3px; */
 }
 
 /********** For Transitions **********/

@@ -4,9 +4,7 @@
 
 /******************** HTML Components ********************/
 const table = document.getElementById("musicTable")
-const title = document.getElementById("inputTitle")
-const composer = document.getElementById("inputComposer")
-const arranger = document.getElementById("inputArranger")
+const input = document.getElementById("inputSearch")
 
 /******************** Table Functions ********************/
 function addRow(dataIndex) {
@@ -33,15 +31,17 @@ function eraseTable() {
 function search() {
     eraseTable()
 
+    console.log(searches)
+
     for (let i = 0; i < songs.length; i++) {
         let match = false;
         
         if (title.value != "" && songs[i].title.includes(title.value)) 
             match = true
-        if (title.value != "" && songs[i].composer.includes(title.value)) 
-            match = true
-        if (title.value != "" && songs[i].arranger.includes(title.value)) 
-            match = true
+        // if (title.value != "" && songs[i].composer.includes(title.value)) 
+        //     match = true
+        // if (title.value != "" && songs[i].arranger.includes(title.value)) 
+        //     match = true
 
         if (match)
             addRow(i)
