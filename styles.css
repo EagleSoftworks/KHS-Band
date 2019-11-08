@@ -11,6 +11,7 @@
 body {
 	background-color: var(--footer);
 	font-family: Arial, Helvetica, sans-serif;
+	transition-duration: inherit;
 }
 /********** Header **********/
 #header {
@@ -67,34 +68,44 @@ body {
 }
 
 /********** Navigation **********/
-#navigation button {
-	margin: 5px 0;
-	font-size: 18px;
+#navBtn {
+	width: 40px;
+	height: 85px;
+	position: fixed;
+	top: 0;
+	text-align: center;
 }
-#navigation p{
-	margin-left: 25px;
-	padding: 5px 0;
+#navBtn h2{
+	color: #ffffff;
+	margin-top: 25px;
+}
+#navBtn:hover #navigation {
+	/* edge doesn't calc(41px * 9) */
+	height: 369px;
 }
 
-/********** GrabCAD Page **********/
-.model {
-	width: 80%;
-	height: 400px;
-	margin: 5px 10%;
-	background-image: radial-gradient( #414141, #0a0a0a);
-	border-radius: 10px;
+#navigation {
+	width: 220px;
+	position: fixed;
+	top: 85px;
+	height: 0;
+	transition-duration: 0.5s;
+	overflow: hidden;
 }
-/* Good model blue: #145087 */
-
-/********** Robotics Page **********/
-
-/* Ideally 315px by 560px */
-.youtube {
-	width: 80%;
-	max-width: 560px;
-	height: 315px;
-	margin: 5px 10%;
-	border: 1px solid #ffffff;
+#navigation div {
+	width: 200px;
+	height: 40px;
+	background-color: var(--accent);
+	border-bottom: 1px solid #000000;
+	transition-duration: 0.5s;
+}
+#navigation div h4 {
+	color: #ffffff;
+	margin-top: 0;
+	padding-top: 10px;
+}
+#navigation div:hover {
+	width: 100%;
 }
 
 /********** Table Properties **********/
@@ -251,7 +262,7 @@ input[type=text] {
 }
 
 .index {
-	width: calc(60% - 12px);
+	width: 60%;/*calc(60% - 12px);*/
 	min-width: 350px;
 	/* top right bottom left */
 	margin: 10px auto 10px auto;
@@ -265,8 +276,21 @@ input[type=text] {
 	padding: 10px 5px;
 	margin: 0;
 }
-.index:hover {
-	width: calc(100% - 12px);
+
+/* Only microsoft edge,
+because it doesn't support
+transitions with calc() */
+@supports (-ms-ime-align:auto) {
+    .index:hover {
+		width: 100%;
+    }
+}
+/* Chrome, which does
+support calc() */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+	.index:hover {
+		width: calc(100% - 12px);
+	}
 }
 
 /********** For Carousel **********/
