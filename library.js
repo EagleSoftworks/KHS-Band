@@ -29,21 +29,24 @@ function eraseTable() {
 
 /******************** Search Function ********************/
 function search() {
-    eraseTable()
+    // let searches = input.value.split(" ")
+    let search = input.value;
 
-    console.log(searches)
+    if (search != "") {
+        eraseTable()
 
-    for (let i = 0; i < songs.length; i++) {
-        let match = false;
-        
-        if (title.value != "" && songs[i].title.includes(title.value)) 
-            match = true
-        // if (title.value != "" && songs[i].composer.includes(title.value)) 
-        //     match = true
-        // if (title.value != "" && songs[i].arranger.includes(title.value)) 
-        //     match = true
+        for (let i = 0; i < songs.length; i++) {
+            let match = false;
+            
+            if (search != "" && songs[i].title.includes(search)) 
+                match = true
+            if (search != "" && songs[i].composer.includes(search)) 
+                match = true
+            if (search != "" && songs[i].arranger.includes(search)) 
+                match = true
 
-        if (match)
-            addRow(i)
+            if (match)
+                addRow(i)
+        }
     }
 }
