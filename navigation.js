@@ -4,7 +4,7 @@
 const navBtn = document.getElementById("navBtn")
 
 const navTitles = ["Home", "Schedule", "Photo Gallery", "Syllabus", "Alumni", "Tri-M Honors Society", "Uniform Care", "Music Library", "Make A Donation"]
-const navLinks = ["index.html", "", "photos.html", "", "", "", "", "library.html", ""]
+const navLinks = ["index.html", "", "photos.html", "", "", "", "", "library.html", "donate.html"]
 
 let navDots = document.createElement("h2")
 navDots.innerHTML = "..."
