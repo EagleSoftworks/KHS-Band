@@ -3,8 +3,8 @@
 
 const navBtn = document.getElementById("navBtn")
 
-const navTitles = ["Home", "Schedule", "Photo Gallery", "Syllabus", "Alumni", "Tri-M Honors Society", "Uniform Care", "Music Library", "Make A Donation"]
-const navLinks = ["index.html", "", "photos.html", "", "", "", "", "library.html", "donate.html"]
+const navTitles = ["Home", "Schedule", "Photo Gallery", "Syllabus", "Alumni", "Tri-M Honors Society", "Uniform Care", "Music Library", "Make A Donation", "View On GitHub"]
+const navLinks = ["index.html", "", "photos.html", "", "", "", "", "library.html", "donate.html", "https://github.com/EagleSoftworks/KHS-Band"]
 
 let navDots = document.createElement("h2")
 navDots.innerHTML = "..."
@@ -13,7 +13,7 @@ navBtn.appendChild(navDots)
 let navigationDiv = document.createElement("div")
 navigationDiv.setAttribute("id", "navigation")
 
-for (let i = 0; i < 9; i++) {
+for (let i = 0; i < navTitles.length; i++) {
     let title = document.createElement("h4")
     title.innerHTML = navTitles[i]
 
