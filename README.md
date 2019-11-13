@@ -19,4 +19,4 @@
 ---
 ## Updating The Website
 
-Check the wiki on the GitHub page for info on updating the KHS-Band website.
+Check the [wiki](https://github.com/EagleSoftworks/KHS-Band/wiki "KHS-Band GitHub Wiki") on the GitHub page for info on updating the KHS-Band website.
