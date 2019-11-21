@@ -9,9 +9,11 @@ const input = document.getElementById("inputSearch")
 /******************** Table Functions ********************/
 function addRow(dataIndex) {
     let newRow = table.insertRow(table.rows.length)
-    newRow.insertCell(0).innerHTML = songs[dataIndex].title
-    newRow.insertCell(1).innerHTML = songs[dataIndex].composer
-    newRow.insertCell(2).innerHTML = songs[dataIndex].arranger
+    newRow.insertCell(0).innerHTML = songs[dataIndex].number
+    newRow.insertCell(1).innerHTML = songs[dataIndex].title
+    newRow.insertCell(2).innerHTML = songs[dataIndex].composer
+    newRow.insertCell(3).innerHTML = songs[dataIndex].arranger
+    newRow.insertCell(4).innerHTML = songs[dataIndex].band
 }
 
 function fillTable() {
