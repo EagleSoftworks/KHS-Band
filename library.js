@@ -52,3 +52,39 @@ function search() {
         }
     }
 }
+
+/******************** Get .CSV File ********************/
+
+var jq = document.createElement('script');
+jq.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(jq);
+// ... give time for script to load, then type (or see below for non wait option)
+// jQuery.noConflict();
+
+$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "./library-data.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+    });
+});
+
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+
+    for (let i = 1; i < allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+            var tarr = [];
+            for (let j = 0; j < headers.length; j++) {
+                tarr.push(headers[j] + ":" + data[j]);
+            }
+            lines.push(tarr);
+        }
+    }
+
+    console.log(lines)
+}
