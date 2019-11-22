@@ -36,7 +36,7 @@ body {
 	background-color: #eeeeee;
 	width: 75%;
 	max-width: 725px;
-	min-width: 425px;
+	min-width: 445px;
 	min-height: 400px;
 	overflow-y: auto;
 	margin-left: auto;
@@ -242,15 +242,40 @@ a {
 	height: 100%;
 }
 
-#inputSearch {
-	width: calc(100% - 110px);
-	height: calc(100% - 14px);
+input[type=text] {
+	width: calc(50% - 100px);
+	height: calc(100% - 12px);
+	margin-left: 5px;
 	padding: 5px;
 	font-size: 16px;
+	border: 1px solid lightgrey;
+	outline: none;
+	float: left;
+}
+
+#bandInput {
+	width: 80px;
+	height: 100%;
 	outline: none;
 	float: right;
-	/* margin-top: 3px; */
 }
+
+#bandInput:hover, input[type=text]:hover {
+	border: 1px solid var(--accent);
+}
+
+/* Trying to style the option dropdowns
+
+select:focus{
+    border-color: gray;
+    outline:none;
+}
+
+#bandInput option:active, #bandInput option:focus {
+	/* padding-top: 10px; 
+	outline: none;
+	color: var(--accent);
+} */
 
 /********** For Transitions **********/
 .row {

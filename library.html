@@ -17,8 +17,15 @@
 	<div id="pageBackground">
 		<div id="page">
 			<div id="searchbar">
-                <input type="text" placeholder="Search a song title, composer, or arranger" id="inputSearch">
-                <button OnClick="search()">Search</button>
+				<button OnClick="search()">Search</button>
+				<input type="text" placeholder="Search a song title" id="titleInput">
+				<input type="text" placeholder="Search a composer/arranger" id="composerInput">
+                <select id="bandInput">
+					<option>All</option>
+					<option>Concert</option>
+					<option>Jazz</option>
+					<option>Drumline</option>
+				</select>
             </div>
 
             <table id="musicTable">
