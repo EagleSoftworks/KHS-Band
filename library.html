@@ -1,55 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>KHS Band | Library</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="KHS Band Page">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+<div id="searchbar">
+	<button OnClick="search()">Search</button>
+	<input type="text" placeholder="Search a song title" id="titleInput">
+	<input type="text" placeholder="Search a composer/arranger" id="composerInput">
+	<select id="bandInput">
+		<option>All</option>
+		<option>Concert</option>
+		<option>Marching</option>
+		<option>Jazz</option>
+		<option>Drumline</option>
+	</select>
+</div>
 
-	<link href="styles.css" rel="stylesheet"/>	
-</head>
-<body>
-	
-	<div id="header">
-		<h1 id="title">Library</h1>
-	</div>
+<table id="musicTable">
+	<tr>
+		<th>#</th>
+		<th>Title</th>
+		<th>Composer</th>
+		<th>Arranger</th>
+		<th>Library</th>
+	</tr>
+</table>
 
-	<div id="pageBackground">
-		<div id="page">
-			<div id="searchbar">
-				<button OnClick="search()">Search</button>
-				<input type="text" placeholder="Search a song title" id="titleInput">
-				<input type="text" placeholder="Search a composer/arranger" id="composerInput">
-                <select id="bandInput">
-					<option>All</option>
-					<option>Concert</option>
-					<option>Marching</option>
-					<option>Jazz</option>
-					<option>Drumline</option>
-				</select>
-            </div>
+<script>
+	/******************** HTML Components ********************/
+	const table = document.getElementById("musicTable")
+	const titleInput = document.getElementById("titleInput")
+	const composerInput = document.getElementById("composerInput")
+	const bandInput = document.getElementById("bandInput")
 
-            <table id="musicTable">
-                <tr>
-					<th>#</th>
-                    <th>Title</th>
-                    <th>Composer</th>
-					<th>Arranger</th>
-					<th>Library</th>
-                </tr>
-            </table>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Website made by Eagle Softworks</span>
-	</div>
-	
-	<div id="navBtn"></div>
-	<script src="navigation.js"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="library.js"></script>
-</body>
-</html>
+	fillTable()
+</script>

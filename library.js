@@ -2,12 +2,6 @@
 
 // This uses music stored in 'library-data.csv'
 
-/******************** HTML Components ********************/
-const table = document.getElementById("musicTable")
-const titleInput = document.getElementById("titleInput")
-const composerInput = document.getElementById("composerInput")
-const bandInput = document.getElementById("bandInput")
-
 /******************** Get .CSV File ********************/
 var jq = document.createElement('script');
 jq.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
@@ -43,8 +37,7 @@ function processData(allText) {
         }
     }
 
-    // Fill the table once the .csv file has been loaded
-    fillTable()
+    // Fill the table once the .csv file has been loaded (when on library.html)
 }
 
 /******************** Table Functions ********************/
