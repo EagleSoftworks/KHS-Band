@@ -7,6 +7,9 @@
 	<link rel="icon" href="media/note-icon.png">
 
 	<link href="styles.css" rel="stylesheet"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="./script.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -15,56 +18,7 @@
 
 	<div id="pageBackground">
 		<div id="page">
-			<div id="carousel">
-				<img class="shadow carouselImg" src="./media/note-icon.png" alt="Notes icon">
-				<img class="shadow carouselImg invisible" src="./media/notes-pattern.png" alt="notes pattern">
-				<img class="shadow carouselImg invisible" src="./media/GitHub-Mark-64px.png" alt="github logo">
-			</div>
-
-			<hr>
-			<div class="row">
-				<div class="index">
-					<a href="./schedule.html">
-						<h2>Schedule</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a href="./photos.html">
-						<h2>Photo Gallery</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a href="syllabus.html">
-						<h2>Syllabus</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a href="alumni.html">
-						<h2>Alumni</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a>
-						<h2>Tri-M Music Honors Society</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a>
-						<h2>Uniform Care</h2>
-					</a>	
-				</div>	
-				<div class="index">
-					<a href="./library.html">
-						<h2>Music Library</h2>
-					</a>
-				</div>
-				<div class="index">
-					<a href="./donate.html">
-						<h2>Make A Donation</h2>
-					</a>
-				</div>
-			</div>
-
+			<script>loadPage('index-buttons.html')</script>
 		</div>
 	</div>
 
@@ -73,8 +27,7 @@
 	</div>
 
 	<div id="navBtn"></div>
+	<link href="navigation.css" rel="stylesheet"/>
 	<script src="navigation.js"></script>
-
-	<script src="carousel.js"></script>
 </body>
 </html>

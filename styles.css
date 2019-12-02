@@ -61,7 +61,7 @@ body {
 }
 
 /********** Navigation **********/
-#navBtn {
+/* #navBtn {
 	width: 40px;
 	height: 85px;
 	position: absolute;
@@ -74,7 +74,7 @@ body {
 }
 #navBtn:hover #navigation {
 	/* edge doesn't calc(41px * 9) */
-	height: 410px;
+	/*height: 410px;
 }
 
 #navigation {
@@ -99,7 +99,7 @@ body {
 }
 #navigation div:hover {
 	width: 100%;
-}
+} */
 
 /********** Table Properties **********/
 

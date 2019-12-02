@@ -11,4 +11,13 @@
 
 <div id="syllabusDisplay"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    /******************** Syllabus Functions ********************/
+    const syllabusInput = document.getElementById("syllabusInput")
+
+    function loadSyllabus() {
+        let syllabusI = syllabusInput.value.toLowerCase()
+
+        loadFile((syllabusI + ".html"), "#syllabusDisplay")
+    }
+</script>

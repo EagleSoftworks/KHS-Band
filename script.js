@@ -7,11 +7,6 @@ function loadFile(filename, divID) {
     // 'divID' needs to be a string for an html id, ex: "#syllabusDisplay"
 }
 
-/******************** Syllabus Functions ********************/
-const syllabusInput = document.getElementById("syllabusInput")
-
-function loadSyllabus() {
-    let syllabusI = syllabusInput.value.toLowerCase()
-
-    loadFile((syllabusI + ".html"), "#syllabusDisplay")
+function loadPage(filename) {
+    loadFile(filename, '#page')
 }
