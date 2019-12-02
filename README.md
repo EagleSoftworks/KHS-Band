@@ -11,7 +11,7 @@
 * 👔 TODO - Uniform Care page
 * 🎼 `library.html` - Searchable music library
 * 🎼 `library.js` - `JavaScript` for searching the library
-* 🎼 `library-data.js` - (TODO) `JavaScript` array where all songs are stored
+* 🎼 `library-data.csv` - `.CSV` file for storing the songs
 * 💸 `donate.html` - Information for donating to KHS music
 * 🎠 `carousel.js` - (TODO) `JavaScript` for a carousel `<div>`
 * ✨ `styles.css` - Styles for all of the pages
