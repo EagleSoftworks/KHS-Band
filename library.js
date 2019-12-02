@@ -6,6 +6,7 @@
 const table = document.getElementById("musicTable")
 const titleInput = document.getElementById("titleInput")
 const composerInput = document.getElementById("composerInput")
+const bandInput = document.getElementById("bandInput")
 
 /******************** Get .CSV File ********************/
 var jq = document.createElement('script');
@@ -70,23 +71,27 @@ function eraseTable() {
 
 /******************** Search Function ********************/
 function search() {
-    let search = input.value;
+    // Searches
+    let titleI = titleInput.value.toLowerCase()
+    let composerI = composerInput.value.toLowerCase()
+    let bandI = bandInput.value
 
-    if (search != "") {
-        eraseTable()
+    eraseTable()
 
-        for (let i = 0; i < songs.length; i++) {
-            let match = false;
-            
-            if (search != "" && songs[i].title.includes(search)) 
-                match = true
-            if (search != "" && songs[i].composer.includes(search)) 
-                match = true
-            if (search != "" && songs[i].arranger.includes(search)) 
-                match = true
+    for (let i = 0; i < songs.length; i++) {
+        let match = true;
+        
+        // If the input isn't blank, then the corresponding attribute must contain the input to match
+        if (titleI != "" && !songs[i].title.toLowerCase().includes(titleI))
+            match = false
+        if (composerI != "" && !(songs[i].composer.toLowerCase().includes(composerI) || songs[i].arranger.toLowerCase().includes(composerI)))
+            match = false
 
-            if (match)
-                addRow(i)
-        }
+        // If the select is not 'All', then the band must match the select
+        if (bandI != "All" && songs[i].band != bandI)
+            match = false
+
+        if (match)
+            addRow(i)
     }
 }
