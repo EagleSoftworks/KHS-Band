@@ -1,10 +1,50 @@
 // JavaScript for library.html
 
-// Don't forget to add "data.js" to the file!
+// This uses music stored in 'library-data.csv'
 
 /******************** HTML Components ********************/
 const table = document.getElementById("musicTable")
-const input = document.getElementById("inputSearch")
+const titleInput = document.getElementById("titleInput")
+const composerInput = document.getElementById("composerInput")
+
+/******************** Get .CSV File ********************/
+var jq = document.createElement('script');
+jq.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(jq);
+// ... give time for script to load, then type (or see below for non wait option)
+
+$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "./library-data.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+    });
+});
+
+var songs = []
+
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+
+    for (let i = 1; i < allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+            let temp = {
+                number: data[0],
+                title: data[1],
+                composer: data[2],
+                arranger: data[3],
+                band: data[4]
+            }
+            songs.push(temp)
+        }
+    }
+
+    // Fill the table once the .csv file has been loaded
+    fillTable()
+}
 
 /******************** Table Functions ********************/
 function addRow(dataIndex) {
@@ -21,7 +61,6 @@ function fillTable() {
         addRow(i)
     }
 }
-fillTable()
 
 function eraseTable() {
     while (table.rows.length > 1) {
@@ -31,7 +70,6 @@ function eraseTable() {
 
 /******************** Search Function ********************/
 function search() {
-    // let searches = input.value.split(" ")
     let search = input.value;
 
     if (search != "") {
@@ -51,40 +89,4 @@ function search() {
                 addRow(i)
         }
     }
-}
-
-/******************** Get .CSV File ********************/
-
-var jq = document.createElement('script');
-jq.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
-document.getElementsByTagName('head')[0].appendChild(jq);
-// ... give time for script to load, then type (or see below for non wait option)
-// jQuery.noConflict();
-
-$(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "./library-data.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-    });
-});
-
-function processData(allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split(',');
-    var lines = [];
-
-    for (let i = 1; i < allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
-            var tarr = [];
-            for (let j = 0; j < headers.length; j++) {
-                tarr.push(headers[j] + ":" + data[j]);
-            }
-            lines.push(tarr);
-        }
-    }
-
-    console.log(lines)
 }
