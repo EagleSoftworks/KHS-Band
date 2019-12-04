@@ -1,23 +1,26 @@
-<select id="syllabusInput" onchange="loadSyllabus()">
-    <option>Concert Band</option>
-    <option>Drumline B4</option>
-    <option>Stage Band</option>
-    <option>Drumline B1</option>
-    <option>Music Appreciation</option>
-    <option>Unified Music</option>
-    <option>Instrumental Music Workshop</option>
-    <option>Guitar I</option>
-</select>
+<div class="center">
+    <h2>Select A Class From The Dropdown</h2>
 
+    <select id="syllabusInput" onchange="loadSyllabus(this.value)">
+        <option value="concert">Concert Band</option>
+        <option value="drumlineB4">Drumline B4</option>
+        <option value="stage">Stage Band</option>
+        <option value="drumlineB1">Drumline B1</option>
+        <option value="appreciation">Music Appreciation</option>
+        <option value="unified">Unified Music</option>
+        <option value="workshop">Instrumental Music Workshop</option>
+        <option value="guitar">Guitar I</option>
+    </select>
+    <hr>
+</div>
 <div id="syllabusDisplay"></div>
 
 <script>
     /******************** Syllabus Functions ********************/
-    var syllabusInput = document.getElementById("syllabusInput")
-
-    function loadSyllabus() {
-        let syllabusI = syllabusInput.value.toLowerCase()
-
-        loadFile((syllabusI + ".html"), "#syllabusDisplay")
+    function loadSyllabus(page) {
+        loadFile(("syllabi/" + page + ".html"), "#syllabusDisplay")
     }
+
+    // Initial page
+    loadSyllabus("concert")
 </script>
