@@ -16,5 +16,6 @@
         "sublist",
         "vectary",
         "youtube"
-    ]
+    ],
+    "workbench.tree.indent": 20
 }

@@ -2,10 +2,14 @@
 
 #### File Breakdown:
 * 📋 `index.html` - The main page for the website
-* 📋 `navigation.js` - `JavaScript` for creating the navigation buttons on each page
+* 📋 `script.js` - `JavaScript` for loading the pages in `index.html`
+* 📋 `index-buttons.html` - The main buttons that make up the first page
+* 📋 `navigation.js` - `JavaScript` for creating the navigation buttons
+* ✨ `navigation.css` - Styles for the created navigation
 * 📅 `schedule.html` - Schedule of past and upcoming performances
 * 📷 `photos.html` - Photo gallery of Google Photos Albums
-* 📚 TODO - Syllabus from school
+* 📚 `syllabus.html` - Syllabus page that renders each syllabus
+* 📚 `/syllabi/` - Folder for all syllabus pages
 * 🏫 `alumni.html` - Alumni page, links to photos and facebook page
 * 🎵 TODO - Tri-M Music Honor Society page
 * 👔 TODO - Uniform Care page
@@ -15,6 +19,7 @@
 * 💸 `donate.html` - Information for donating to KHS music
 * 🎠 `carousel.js` - (TODO) `JavaScript` for a carousel `<div>`
 * ✨ `styles.css` - Styles for all of the pages
+* 📷 `/media/` - Folder for pictures for the website
 
 ---
 ## Updating The Website
