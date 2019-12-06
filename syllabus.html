@@ -2,14 +2,14 @@
     <h2>Select A Class From The Dropdown</h2>
 
     <select id="syllabusInput" onchange="loadSyllabus(this.value)">
-        <option value="concert">Concert Band</option>
-        <option value="drumlineB4">Drumline B4</option>
-        <option value="stage">Stage Band</option>
-        <option value="drumlineB1">Drumline B1</option>
-        <option value="appreciation">Music Appreciation</option>
-        <option value="unified">Unified Music</option>
-        <option value="workshop">Instrumental Music Workshop</option>
-        <option value="guitar">Guitar I</option>
+        <option value="concert.html">Concert Band</option>
+        <option value="drumlineB4.html">Drumline B4</option>
+        <option value="stage.html">Stage Band</option>
+        <option value="drumlineB1.html">Drumline B1</option>
+        <option value="appreciation.html">Music Appreciation</option>
+        <option value="unified.html">Unified Music</option>
+        <option value="workshop.html">Instrumental Music Workshop</option>
+        <option value="guitar.html">Guitar I</option>
     </select>
     <hr>
 </div>
@@ -18,9 +18,9 @@
 <script>
     /******************** Syllabus Functions ********************/
     function loadSyllabus(page) {
-        loadFile(("syllabi/" + page + ".html"), "#syllabusDisplay")
+        loadFile(("syllabi/" + page), "#syllabusDisplay")
     }
 
     // Initial page
-    loadSyllabus("concert")
+    loadSyllabus("concert.html")
 </script>

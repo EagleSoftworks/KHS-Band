@@ -17,6 +17,7 @@ body {
 #header {
 	background-image: linear-gradient(#818181, #0a0a0a, #414141);
 	width: 100%;
+	min-width: 495px;
 	height: 60px;
 	text-align: center;
 	padding-top: 25px;
@@ -60,7 +61,7 @@ body {
 	color: #ffffff;
 }
 
-/********** Table Properties **********/
+/********** Table Styles **********/
 
 table {
 	width: 100%;
@@ -88,27 +89,7 @@ tr:hover {
 	background-color: #a8a8a8;
 }
 
-
-/********** Base Components **********/
-h1, h2, h3, h4 {
-	margin: 5px 0;
-	color: #000000; /* var(--accent); */
-}
-
-p {
-	font-size: 16px;
-	line-height: 24px;
-	margin: 5px 0;
-}
-
-mark {
-	background-color: #cccccc;
-	padding: 2px 5px;
-	font-family: "Courier New", Courier, monospace;
-	border: 1px solid #ffffff;
-	border-radius: 2px;
-}
-
+/********** Lists Styles **********/
 ul {
 	padding: 5px;
 	list-style: none;
@@ -123,6 +104,53 @@ ul li::before {
 }
 li {
 	line-height: 24px;
+}
+
+ol {
+	list-style: none;
+	counter-reset: li;
+}
+ol li:before {
+	content: counter(li);
+	color: var(--accent);
+	font-weight: bold;
+	display: inline-block;
+	width: 20px;
+	margin-left: 0;
+}
+ol li {
+	counter-increment: li;
+}
+
+.sublist { /* Adds a left-margin so a sublist sticks out more */
+	margin-left: 25px;
+}
+
+
+/********** Base Components **********/
+h1, h2, h3, h4 {
+	margin: 5px 0;
+	color: #000000; /* var(--accent); */
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	margin: 5px 0;
+}
+.italics {
+	font-style: italic;
+}
+.bold {
+	font-weight: bold;
+}
+
+mark {
+	background-color: #cccccc;
+	padding: 2px 5px;
+	font-family: "Courier New", Courier, monospace;
+	border: 1px solid #ffffff;
+	border-radius: 2px;
 }
 
 hr {
@@ -184,10 +212,6 @@ a {
 	margin-bottom: 10px;
 }
 
-.sublist { /* Adds a left-margin so a sublist sticks out more */
-	margin-left: 25px;
-}
-
 /********** Library **********/
 
 #searchbar {
@@ -245,6 +269,14 @@ select:focus{
 
 #syllabusInput:hover {
 	border: 1px solid var(--accent);
+}
+
+#syllabusDisplay {
+	font-family: Times, "Times New Roman", serif;
+}
+
+.halfPage {
+	width: 50%;
 }
 
 /********** For Transitions **********/
