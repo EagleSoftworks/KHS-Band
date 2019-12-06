@@ -270,6 +270,11 @@ select:focus{
 	outline:none;
 }
 
+#syllabusInput option:hover {
+	background-color: var(--accent);
+	color: white;
+}
+
 #syllabusInput:hover {
 	border: 1px solid var(--accent);
 }
