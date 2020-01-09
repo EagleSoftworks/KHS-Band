@@ -1,35 +1,7 @@
+<!-- Move the user to layout.html and load the index-buttons -->
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>KHS Band</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="KHS Band Page">
-	<link rel="icon" href="media/note-icon.png">
-
-	<link href="styles.css" rel="stylesheet"/>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="./script.js"></script>
-</head>
-<body>
-	<div id="header">
-		<h1 id="title">Kennett High School Band</h1>
-	</div>
-
-	<div id="pageBackground">
-		<div id="page">
-			<script>loadPage('index-buttons.html')</script>
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Website made by Eagle Softworks</span>
-	</div>
-
-	<div id="navBtn"></div>
-	<link href="navigation.css" rel="stylesheet"/>
-	<script src="navigation.js"></script>
-
-	<script src="library.js"></script>
-</body>
-</html>
+<script src="./script.js"></script>
+<script>
+	loadFile("index-buttons.html")
+</script>

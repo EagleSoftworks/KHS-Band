@@ -17,18 +17,19 @@ for (let i = 0; i < navTitles.length; i++) {
     let row = document.createElement("button")
     row.innerHTML = navTitles[i]
  
-    let link = document.createElement("a")
+    
 
     if (i != navTitles.length - 1) {
-        row.setAttribute("onclick", ("loadPage('" + navLinks[i] + "')"))
-        link.setAttribute("href", "#")
+        row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
+        navigationDiv.appendChild(row)
     }
     else {
+        // A real url needs an anchor tag as a link
+        let link = document.createElement("a")
         link.setAttribute("href", navLinks[i])
-    }
-
-    link.appendChild(row)
-    navigationDiv.appendChild(link)
+        link.setAttribute("target", "_blank")
+        link.appendChild(row)
+        navigationDiv.appendChild(link)
+    }    
 }
-
 navBtn.appendChild(navigationDiv)
